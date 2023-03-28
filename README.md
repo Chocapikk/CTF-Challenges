@@ -1,5 +1,5 @@
 # CTF-Challenges
 
-- JWT: [](./jwt)
-- Insecure Deserialization: (not tested yet) [](./unserialize)
-- IP-Logger: [](./ip-logger)
+- JWT: [here](./jwt)
+- Insecure Deserialization: (not tested yet) [here](./unserialize)
+- IP-Logger: [here](./ip-logger)
