@@ -33,7 +33,7 @@
         $x_forwarded_for = trim($elements[0]);
 
         $whitelist =
-            '/^(?:(?:[0-9]{1,3}\.){3}[0-9]{1,3}|[a-zA-Z0-9.\-&_\$\{\}\*]+)$/';
+            '/^(?:(?:[0-9]{1,3}\.){3}[0-9]{1,3}|[a-zA-Z0-9.\-&_\$\{\}<>\*]+)$/';
 
         if (preg_match($whitelist, $x_forwarded_for)) {
             $log_entry = $client_ip . " - " . $x_forwarded_for;
