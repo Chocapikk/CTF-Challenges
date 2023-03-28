@@ -26,16 +26,16 @@
     <div class="container">
         <h1>IP Logger - Exemple</h1>
         <?php
-        $client_ip = $_SERVER['REMOTE_ADDR'];
+        $client_ip = $_SERVER["REMOTE_ADDR"];
 
-        $x_forwarded_for = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    $elements = explode(",", $x_forwarded_for);
-    $x_forwarded_for = trim($elements[0]);
+        $x_forwarded_for = $_SERVER["HTTP_X_FORWARDED_FOR"];
+        $elements = explode(",", $x_forwarded_for);
+        $x_forwarded_for = trim($elements[0]);
 
-        $whitelist = '/^(?:(?:[0-9]{1,3}\.){3}[0-9]{1,3}|[a-zA-Z0-9.\-&_\$\{\}\*]+)$/';
+        $whitelist =
+            '/^(?:(?:[0-9]{1,3}\.){3}[0-9]{1,3}|[a-zA-Z0-9.\-&_\$\{\}\*]+)$/';
 
-
-                if (preg_match($whitelist, $x_forwarded_for)) {
+        if (preg_match($whitelist, $x_forwarded_for)) {
             $log_entry = $client_ip . " - " . $x_forwarded_for;
             $log_file = "log.txt";
             $cmd = "echo " . $log_entry . " >> " . $log_file;
